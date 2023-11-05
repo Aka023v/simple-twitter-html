@@ -1,15 +1,3 @@
-<?php
-$dbh = new PDO(
-  'mysql:dbname=twitter;host=mysql;charset=utf8',
-  'root',
-  'password'
-);
-
-$query = "SELECT * FROM tweet";
-$stmt = $dbh->query($query);
-$tweets = $stmt->fetchAll();
-?>
-
 <body>
   <div>
     <h1>簡易Twitter</h1>
@@ -21,14 +9,30 @@ $tweets = $stmt->fetchAll();
         <th>編集</th>
         <th>削除</th>
       </tr>
-      <?php foreach ($tweets as $tweet) : ?>
-        <tr>
-          <td><?php echo $tweet['poster']; ?></td>
-          <td><?php echo $tweet['tweet']; ?></td>
-          <td><a href="./edit.php?id=<?php echo $tweet['id'] ?>">編集</a></td>
-          <td><a href="./delete.php?id=<?php echo $tweet['id'] ?>">削除</a></td>
-        </tr>
-      <?php endforeach; ?>
+      <tr>
+        <td>さくら</td>
+        <td>春が来た〜</td>
+        <td><a href="./edit.php">編集</a></td>
+        <td><a href="./delete.php">削除</a></td>
+      </tr>
+      <tr>
+        <td>もみじ</td>
+        <td>秋が来た〜</td>
+        <td><a href="./edit.php">編集</a></td>
+        <td><a href="./delete.php">削除</a></td>
+      </tr>
+      <tr>
+        <td>あさがお</td>
+        <td>夏が来た〜</td>
+        <td><a href="./edit.php">編集</a></td>
+        <td><a href="./delete.php">削除</a></td>
+      </tr>
+      <tr>
+        <td>つばき</td>
+        <td>冬が来た〜</td>
+        <td><a href="./edit.php">編集</a></td>
+        <td><a href="./delete.php">削除</a></td>
+      </tr>
     </table>
   </div>
 </body>
